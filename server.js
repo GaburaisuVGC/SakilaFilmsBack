@@ -7,7 +7,9 @@ const app = express();
 
 app.use(cors());
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
+  connectionLimit : 10,
+  acquireTimeout  : 10000,
   host: process.env.HOSTDB,
   port: process.env.PORTDB,
   user: process.env.USER,
