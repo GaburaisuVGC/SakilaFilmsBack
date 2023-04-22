@@ -17,10 +17,10 @@ const connection = mysql.createPool({
   database: process.env.DATABASE,
 });
 
-connection.connect((err) => {
-  if (err) throw err;
-  console.log("Connected to MySQL database");
-});
+// connection.connect((err) => {
+//   if (err) throw err;
+//   console.log("Connected to MySQL database");
+// });
 
 app.get("/films", (req, res) => {
   const limit = req.query.limit || 10;
